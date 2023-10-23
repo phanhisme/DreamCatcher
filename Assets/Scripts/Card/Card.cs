@@ -70,10 +70,11 @@ public class Card: ScriptableObject
         public string upgradedAmount;
     }
     [System.Serializable]
-    public struct CardBuffs
+    public struct CardEffects //both buffs and debuffs
     {
-        //public Buff.Type buffType;
+        public Effect.Type buffType;
         public CardAmount buffAmount;
+        public CardAmount debuffAmount;
     }
 }
 
