@@ -12,5 +12,37 @@ public class BattleManager : MonoBehaviour
     public CardDisplay selectedCard;
 
     //questionable
-    public List<Card> cardsInHandGO = new List<Card>();
+    public List<CardDisplay> cardsInHandGO = new List<CardDisplay>();
+
+    //selected char stats 
+    public SelectedChar target;
+    public SelectedChar player;
+
+    public int maxEnergy;
+    public int energy;
+    public int drawAmount = 5;
+    
+    //turn and target
+    public Turn turn;
+    public enum Turn { Player, Enemy };
+
+    //enemy
+    public List<EnemyUnit> enemy;
+
+    //general
+    private GameManager gameManager;
+    //private CardActions cardActions;
+    //PlayerStatsUI playerStatsUI;
+
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        //cardActions = GetComponent<CardActions>();
+        //playerStatsUI = FindObjectOfType<PlayerStatsUI>();
+    }
+
+    public void StartFight()
+    {
+        //
+    }
 }

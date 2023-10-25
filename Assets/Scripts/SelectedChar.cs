@@ -38,12 +38,27 @@ public class SelectedChar : MonoBehaviour
         //healthbar.slider -> update later
     }
 
-    public void DamageTaken(int damage)
+    public void TakeDamage(int damage)
     {
         if (currentBlock > 0)
         {
+            Debug.Log("you have taken " + damage + " damage");
             //amount of block enough to neutralize damage
             damage = BlockDamage(damage);
+        }
+
+        if (currentHP <= 0)
+        {
+            if (enemy != null)
+            {
+                //battleManager.EndFight(true);
+            }
+            else
+            {
+                //battleManager.EndFight(false);
+            }
+
+            //player dies
         }
     }
 
@@ -71,4 +86,6 @@ public class SelectedChar : MonoBehaviour
     {
         currentBlock += blockAmount;
     }
+
+    //add buff here
 }
